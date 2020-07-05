@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="YourCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">#ffffff</item>
+    </style>
+</resources>

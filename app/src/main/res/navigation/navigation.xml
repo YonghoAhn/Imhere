@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/permissionFragment">
+
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="moe.misakachan.imhere.PermissionFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_permission" >
+        <action
+            android:id="@+id/action_permissionFragment_to_setAgeFragment"
+            app:destination="@id/setAgeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="moe.misakachan.imhere.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        >
+        <action
+            android:id="@+id/action_mainFragment_to_setAgeFragment"
+            app:destination="@id/setAgeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setAgeFragment"
+        android:name="moe.misakachan.imhere.SetAgeFragment"
+        android:label="SetAgeFragment"
+        tools:layout="@layout/fragment_set_age">
+        <action
+            android:id="@+id/action_setAgeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

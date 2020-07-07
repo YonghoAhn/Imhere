@@ -2,4 +2,5 @@
     <string name="app_name">Imhere</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_age">범위를 초과한 나이입니다.</string>
 </resources>

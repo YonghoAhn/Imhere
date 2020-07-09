@@ -50,7 +50,7 @@ class SetAgeFragment : Fragment() {
                 findNavController().navigate(R.id.action_setAgeFragment_to_mainFragment)
             }
             else{
-                Toast.makeText(requireContext(),R.string.error_age, Toast.LENGTH_SHORT).show()
+                txtAge.setError(R.string.error_age.toString());
             }
         }
     }

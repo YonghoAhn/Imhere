@@ -30,6 +30,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="64dp"

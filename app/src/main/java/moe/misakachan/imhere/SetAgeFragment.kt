@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.transition.TransitionInflater
 import kotlinx.android.synthetic.main.fragment_set_age.*
+import java.lang.Integer.parseInt
 
 
 class SetAgeFragment : Fragment() {
@@ -30,11 +31,20 @@ class SetAgeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         button.setOnClickListener {
-            requireContext().getSharedPreferences("imhere", Context.MODE_PRIVATE).edit().putString("age",
-                txtAge.text.toString()
-            ).apply()
-            findNavController().navigate(R.id.action_setAgeFragment_to_mainFragment)
+            val age = parseInt(txtInput.editText?.text.toString())
+            if (age in 4..120) {
+                requireContext().getSharedPreferences("imhere", Context.MODE_PRIVATE).edit()
+                    .putString(
+                        "age",
+                        txtInput.editText?.text.toString()
+                    ).apply()
+                findNavController().navigate(R.id.action_setAgeFragment_to_mainFragment)
+            }
+            else{
+                txtAge.error = R.string.error_age.toString();
+            }
         }
     }
+
 
 }

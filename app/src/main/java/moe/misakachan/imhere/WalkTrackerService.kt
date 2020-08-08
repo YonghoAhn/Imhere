@@ -106,7 +106,7 @@ class WalkTrackerService : Service(), LocationListener {
         Log.d("BT SERVICE", "SERVICE STARTED")
         //bluetoothScannerTimer.schedule(scanTimerTask, 0, 30000)
         //readCharacteristicTimer.schedule(readCharacteristicTimerTask, 0, 1000)
-        startBeacon()
+        //startBeacon()
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -153,11 +153,11 @@ class WalkTrackerService : Service(), LocationListener {
 
     private fun startBeacon() {
         val beacon = Beacon.Builder()
-            .setId1("00000000-d161-11ea-87d0-0242ac130003")  // uuid for beacon
+            .setId1("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")  // uuid for beacon
             .setId2("1")  // major
             .setId3("1")  // minor
-            .setManufacturer(0x0118)  // Radius Networks. 0x0118 : Change this for other beacon layouts // 0x004C : for iPhone
-            .setTxPower(-94)  // Power in dB
+             // Radius Networks. 0x0118 : Change this for other beacon layouts // 0x004C : for iPhone
+            .setTxPower(-100)  // Power in dB
             .setDataFields(listOf(0L))  // Remove this for beacon layouts without d: fields
             .build()
 

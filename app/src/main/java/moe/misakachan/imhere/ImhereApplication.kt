@@ -23,6 +23,7 @@ class ImhereApplication : Application(), BootstrapNotifier {
 
     override fun onCreate() {
         super.onCreate()
+        /*
         val beaconManager = BeaconManager.getInstanceForApplication(this)
         val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
@@ -55,8 +56,6 @@ class ImhereApplication : Application(), BootstrapNotifier {
             .setContentIntent(pendingIntent)
         beaconManager.enableForegroundServiceScanning(builder.build(), 502)
         beaconManager.setEnableScheduledScanJobs(false)
-        beaconManager.backgroundBetweenScanPeriod = 0
-        beaconManager.backgroundScanPeriod = 1100
 
         beaconManager.beaconParsers.clear() // clearning all beacon parsers ensures nothing matches
         beaconManager.backgroundBetweenScanPeriod = Long.MAX_VALUE
@@ -65,13 +64,14 @@ class ImhereApplication : Application(), BootstrapNotifier {
         beaconManager.foregroundScanPeriod = 0
 
         // The following code block activates the foreground service by starting background scanning
-
-        // The following code block activates the foreground service by starting background scanning
         val region = Region(
             "dummy-region",
             Identifier.parse("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF"), null, null
         )
         regionBootstrap = RegionBootstrap(this, region)
+
+         */
+        /*
         val beacon = Beacon.Builder()
             .setId1("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")
             .setId2("1")
@@ -96,6 +96,7 @@ class ImhereApplication : Application(), BootstrapNotifier {
                 Log.i("MisakaMOE", "Advertisement start succeeded.")
             }
         })
+         */
     }
 
     override fun didDetermineStateForRegion(p0: Int, p1: Region?) {

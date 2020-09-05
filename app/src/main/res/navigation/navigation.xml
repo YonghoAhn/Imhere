@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_permissionFragment_to_setAgeFragment"
             app:destination="@id/setAgeFragment" />
+        <action
+            android:id="@+id/action_permissionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -31,6 +34,18 @@
         tools:layout="@layout/fragment_set_age">
         <action
             android:id="@+id/action_setAgeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="moe.misakachan.imhere.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_setAgeFragment"
+            app:destination="@id/setAgeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

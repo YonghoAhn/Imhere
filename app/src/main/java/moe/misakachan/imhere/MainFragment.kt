@@ -26,8 +26,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
@@ -36,9 +34,13 @@ class MainFragment : Fragment() {
         button.setOnClickListener {
             if(!Util.isMyServiceRunning(mService.javaClass,requireActivity()))
             {
-                requireActivity().startService(mIntent)
+                //if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                //    requireActivity().startForegroundService(mIntent)
+                //} else {
+                    requireActivity().startService(mIntent)
+                //}
                 Toast.makeText(requireContext(), "서비스가 시작되었습니다.", Toast.LENGTH_SHORT).show()
-                textView.text = "Running"
+                textView.text = "실행중"
                 textView.setTextColor(resources.getColor(R.color.running) )
                 cardView.strokeColor = resources.getColor(R.color.running)
                 button.text = "Tap to Off"
@@ -47,7 +49,7 @@ class MainFragment : Fragment() {
             {
                 requireActivity().stopService(mIntent)
                 Toast.makeText(requireContext(), "서비스가 종료되었습니다.", Toast.LENGTH_SHORT).show()
-                textView.text = "Not Running"
+                textView.text = "종료됨"
                 textView.setTextColor(resources.getColor(R.color.notrunning ) )
                 cardView.strokeColor = resources.getColor(R.color.notrunning)
                 button.text = "Tap to on"

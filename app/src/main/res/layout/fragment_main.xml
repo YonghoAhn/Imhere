@@ -33,9 +33,9 @@
             android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="64dp"
-            android:layout_marginEnd="64dp"
+            android:layout_marginEnd="32dp"
 
             app:cardCornerRadius="360dp"
             app:cardElevation="16dp"
@@ -44,19 +44,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:strokeColor="@color/notrunning"
-            app:strokeWidth="1dp">
+            app:strokeWidth="2dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/open_sans_bold"
-                    android:text="Service is"
+                    android:text="서비스가"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -70,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_bold"
-                    android:text="Not Running"
+                    android:text="종료됨"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/notrunning"
                     app:layout_constraintBottom_toBottomOf="parent"

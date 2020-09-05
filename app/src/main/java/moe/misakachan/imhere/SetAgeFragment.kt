@@ -36,8 +36,11 @@ class SetAgeFragment : Fragment() {
                 requireContext().getSharedPreferences("imhere", Context.MODE_PRIVATE).edit()
                     .putString(
                         "age",
-                        txtInput.editText?.text.toString()
-                    ).apply()
+                        txtInput.editText?.text.toString())
+                    .putString(
+                        "setting",
+                        "true")
+                    .apply()
                 findNavController().navigate(R.id.action_setAgeFragment_to_mainFragment)
             }
             else{
